@@ -1,4 +1,4 @@
-# Simple-Android-Restaurant
+# Simple-Android-Restaurant-Admin
 
 ### Android Restaurant Client Side
 https://github.com/osamamohsen/Android-Restaurant
