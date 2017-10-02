@@ -1,0 +1,92 @@
+{
+  "project_info": {
+    "project_number": "645128113696",
+    "firebase_url": "https://restaurant-73b0c.firebaseio.com",
+    "project_id": "restaurant-73b0c",
+    "storage_bucket": "restaurant-73b0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645128113696:android:68cd0021a0c5a530",
+        "android_client_info": {
+          "package_name": "osama.restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645128113696-a6po3f9p32a9jf5llif9qtfpfuo3hjob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "osama.restaurant",
+            "certificate_hash": "d465aa98373406a6c36f1e3a22250d84ec1a4604"
+          }
+        },
+        {
+          "client_id": "645128113696-jnu2fh6uqei97ampi8l4n54cusle4itv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RaNFhn8wn5HW8rS2v7A99fHhu3xH3H8"
+        },
+        {
+          "current_key": "AIzaSyCTQ8s1At7PPf-Sbm45C-s8XHewGpNN8_Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645128113696-jnu2fh6uqei97ampi8l4n54cusle4itv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645128113696:android:7affc7a0cb118c79",
+        "android_client_info": {
+          "package_name": "osama.restaurantserver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645128113696-jnu2fh6uqei97ampi8l4n54cusle4itv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_RaNFhn8wn5HW8rS2v7A99fHhu3xH3H8"
+        },
+        {
+          "current_key": "AIzaSyCTQ8s1At7PPf-Sbm45C-s8XHewGpNN8_Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

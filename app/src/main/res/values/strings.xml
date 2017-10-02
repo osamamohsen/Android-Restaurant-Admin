@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RestaurantServer</string>
+    <string name="solgan">We transport orders to customers quickly as we can.</string>
+    <string name="title_activity_test">Test</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">Home</string>
+</resources>
