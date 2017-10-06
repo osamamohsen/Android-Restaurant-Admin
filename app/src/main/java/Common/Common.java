@@ -7,5 +7,5 @@ import Models.User;
  */
 
 public class Common {
-    public static User current_user;
+    public static User current_user = null;
 }

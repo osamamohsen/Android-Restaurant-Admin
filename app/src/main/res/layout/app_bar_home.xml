@@ -29,6 +29,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:backgroundTint="@android:color/white"
-        app:srcCompat="@drawable/cart" />
+        app:srcCompat="@drawable/add" />
 
 </android.support.design.widget.CoordinatorLayout>
