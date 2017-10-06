@@ -8,4 +8,6 @@ import Models.User;
 
 public class Common {
     public static User current_user = null;
+    public static String UPDATE = "Update";
+    public static String DELETE = "Delete";
 }
