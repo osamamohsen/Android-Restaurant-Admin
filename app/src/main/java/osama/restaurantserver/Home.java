@@ -56,6 +56,8 @@ public class Home extends AppCompatActivity
     FirebaseStorage storage;
     StorageReference storageReference;
 
+    DrawerLayout drawer_layout;
+
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
 
@@ -79,6 +81,8 @@ public class Home extends AppCompatActivity
         category = database.getReference("Category");
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+
+        drawer_layout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -242,8 +246,10 @@ public class Home extends AppCompatActivity
                 dialogInterface.dismiss();
                 //Connect to Firebase
                 if(newCategory != null){
-                    if(newCategory.getName().toString() != "" && newCategory.getImage().toString() != "")
+                    if(newCategory.getName().toString() != "" && newCategory.getImage().toString() != ""){
                         category.push().setValue(newCategory);
+                        Snackbar.make(drawer_layout,"Category "+newCategory.getName()+" was added",Snackbar.LENGTH_SHORT).show();
+                    }
                     else if(newCategory.getName().toString() == "" && newCategory.getImage().toString() == "")
                         Toast.makeText(Home.this, "Please Insert Category Name And Upload Image", Toast.LENGTH_SHORT).show();
                     else if(newCategory.getName().toString() == "")
@@ -277,7 +283,10 @@ public class Home extends AppCompatActivity
                 viewHolder.setItemClickListner(new ItemClickListner() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        //Code Later
+                        //Start Food For Each Category
+                        Intent foodList = new Intent(Home.this,FoodList.class);
+                        foodList.putExtra("CategoryId",adapter.getRef(position).getKey());
+                        startActivity(foodList);
                     }
                 });
             }
@@ -340,7 +349,6 @@ public class Home extends AppCompatActivity
     }
 
     //Update And Delete
-
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if(item.getTitle().equals(Common.UPDATE)){
