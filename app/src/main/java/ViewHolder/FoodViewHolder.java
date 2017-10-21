@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import Common.Common;
+import osama.restaurantserver.Common.Common;
 import Interface.ItemClickListner;
 import osama.restaurantserver.R;
 

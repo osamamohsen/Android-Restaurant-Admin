@@ -1,29 +1,37 @@
 package osama.restaurantserver;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,12 +44,15 @@ import com.google.firebase.storage.UploadTask;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
-import Common.Common;
+import osama.restaurantserver.Common.Common;
 import Interface.ItemClickListner;
 import Models.Category;
 import ViewHolder.MenuViewHolder;
+import firebaseNotification.MySingleton;
 import info.hoang8f.widget.FButton;
 
 public class Home extends AppCompatActivity
@@ -68,10 +79,21 @@ public class Home extends AppCompatActivity
     Uri saveUri;
     private final int PICK_IMAGE_REQUEST = 71;
 
+    Button btnSendToken;
+    //send_notifications
+    String app_server_url = "http://192.168.1.106/Mobile/PushNotification/fcm_insert.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+//        btnSendToken = (Button)findViewById(R.id.btnSendToken);
+//        btnSendToken.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            }//end onClick
+//        });
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Menu Mangement");
         setSupportActionBar(toolbar);
@@ -334,11 +356,11 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
-            // Handle the camera action
         } else if (id == R.id.nav_menu) {
 
         } else if (id == R.id.nav_orders) {
-
+            Intent orders = new Intent(getBaseContext(), OrderStatus.class);
+            startActivity(orders);
         } else if (id == R.id.nav_log_out) {
 
         }
@@ -393,6 +415,8 @@ public class Home extends AppCompatActivity
         });
 
         dialog.show();
+
+
     }
 
     private void showUpdateDialog(final String key, final Category item) {
@@ -445,4 +469,5 @@ public class Home extends AppCompatActivity
         });
         alertDialog.show();
     }
+
 }

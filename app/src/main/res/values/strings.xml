@@ -8,4 +8,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">Home</string>
+
+    <string name="FCM_PREF">osama.restaurantserver.fcm_pref</string>
+    <string name="FCM_TOKEN">osama.restaurantserver.fcm_token</string>
+    <string name="title_activity_tracking_order">Map</string>
 </resources>
