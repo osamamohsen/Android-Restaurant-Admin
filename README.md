@@ -1,7 +1,7 @@
 # Simple-Android-Restaurant-Admin
 
 ### Android Restaurant Client Side
-https://github.com/osamamohsen/Android-Restaurant
+https://github.com/osamamohsen/Android-Restaurant-Client
 
 ### Restaurant Android application which makes use of the following Google Firebase components:
 
